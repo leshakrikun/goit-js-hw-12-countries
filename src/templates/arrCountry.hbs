@@ -1,54 +1,5 @@
 {{#each this}}
 <ul class="languages-list">
-                <li class="languages-list__item">{{name}}</li>
-           
+   <li class="languages-list__item">{{name}}</li>        
  </ul>
 {{/each}} 
-
-
-{{!-- 
-<div class="country-card"></div>
-<h2 class="country-name">{{name}}</h2>
-<div class="info-card">
-    <div class="info">
-    <p class="capital"><span>Capital: </span>{{capital}}</p>
-    <p class="population"><span>Population: </span>{{population}}</p>
-    <ul class="languages-list"><span>languages</span>
-            {{#each languages}}
-                <li class="languages-list__item">{{this.name}}</li>
-            {{/each}}
-        </ul>
-    </div>
-    <img src={{flag}} alt="flag" class="flag">
-</div>
- --}}
-
-
-
-
-{{!-- 
-{{#each dish}}
-<li class="menu__item">
-    <article class="card">
-        <img class = 'card__image' src="{{this.image}}" alt={{this.name}}>
-        <div class="card__content">
-        <h2 class="card__name">{{this.name}}</h2>
-        
-        <p class="card__price">
-            <i class="material-icons">monetization_on</i>
-            {{this.price}} кредитов
-        </p>
-        <p class="card__descr">{{this.description}}</p>
-        <ul class="tag-list">
-            {{#each ingredients}}
-                <li class="tag-list__item">{{this}}</li>
-            {{/each}}
-        </ul>
-    </div>   
-    <button class="card__button button">
-        <i class="material-icons button__icon"> shopping_cart </i>
-        В корзину
-        </button>
-    </article> 
-</li>
-{{/each}} --}}

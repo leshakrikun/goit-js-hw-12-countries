@@ -1,32 +1,32 @@
-export default qq
-function qq (countryName) {
-fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
-.then(response => {
-    return response.json();
-})
-.then(country  => {
-    const markup = countryCardTemplate(country)
-    console.log(markup);
-    refs.cardContainer.innerHTML = markup; 
-})
-.catch(error => {
-    console.log('error');   
-})  
+import '@pnotify/core/dist/BrightTheme.css';
+import countryCardTemplate from './templates/country.hbs'
+import countryCardTemplates from './templates/arrCountry.hbs'
+export default query
+
+const { alert, notice, info, success, error } = require('@pnotify/core');
+const refs = {
+    cardContainer: document.querySelector('.card-container')
 }
 
-
-
-
-
-
-import { onError } from './main';
-
-function fetchCountries (countryName) {
-   return fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
-.then(response =>  {
+function query(countryName) {fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
+.then(response => {  
     return response.json()
 })
-.catch(onError);
-}
-
-export default { fetchCountries }
+.then(country  => {
+    if (country.length===1){
+        const markup = countryCardTemplate(country)
+        refs.cardContainer.innerHTML = markup; 
+    } else if(country.length<11) {
+        const markup = countryCardTemplates(country)
+        refs.cardContainer.innerHTML = markup; 
+    }
+    else {
+        refs.cardContainer.innerHTML = '';
+        const myAlert = alert({
+                        text: "Сделайте более специфичный запрос",
+            type: 'info'
+            
+          });
+    }
+})
+}  
