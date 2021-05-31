@@ -16,7 +16,7 @@ function onInput (event) {
    event.preventDefault();
   let countryName = event.target.value;
   countryName = countryName.trim();
-
+consol.log(countryName);
   query(countryName);
   
 }
