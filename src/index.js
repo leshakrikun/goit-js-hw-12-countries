@@ -7,16 +7,15 @@ import query from './fetchCountries.js';
 const refs = {
     cardContainer: document.querySelector('.card-container')
 }
-
 const searchName = document.querySelector('input')
-
 searchName.addEventListener('input', debounce (onInput, 500));
 
 function onInput (event) {
    event.preventDefault();
-   const countryName = event.target.value;
-   query(countryName);
-   event.target.value = '';
+   const countryName = event.target.value.trim();
+   if (countryName.length!==0){
+    query(countryName);
+   }
 }
 
 
