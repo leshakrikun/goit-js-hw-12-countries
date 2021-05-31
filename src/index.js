@@ -16,7 +16,7 @@ function onInput (event) {
    event.preventDefault();
    const countryName = event.target.value.trim();
    query(countryName);
-   event.target.value = '';
+   //event.target.value = '';
 }
 
 
