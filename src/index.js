@@ -14,7 +14,7 @@ searchName.addEventListener('input', debounce (onInput, 500));
 
 function onInput (event) {
    event.preventDefault();
-   const countryName = event.target.value;
+   const countryName = trim(event.target.value);
    query(countryName);
    event.target.value = '';
 }
