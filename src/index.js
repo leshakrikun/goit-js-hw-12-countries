@@ -14,9 +14,11 @@ searchName.addEventListener('input', debounce (onInput, 500));
 
 function onInput (event) {
    event.preventDefault();
+   
    const countryName = event.target.value.trim();
-   query(countryName);
-   //event.target.value = '';
+  if (countryName !== ' ' ) {
+  query(countryName);
+  }
 }
 
 
